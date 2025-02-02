@@ -1,0 +1,202 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Space between cards */
+  max-width: 500px; /* Set a max width for the card */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h4 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Styling for the timer inside the card */
+.card .timer-container {
+  display: flex;
+  justify-content: space-between; /* Space between the timer symbol and time */
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; /* Ensure space between timer and question */
+}
+
+/* Timer symbol - Rotate animation */
+.card .timer-symbol {
+  display: inline-block; /* Ensures proper rotation */
+  animation: rotateSymbol 3s linear infinite; /* You can adjust the time (3s) */
+}
+
+/* Pulse effect for the timer number */
+.card .timer {
+  display: inline-block;
+  font-size: 1.5em; /* Larger timer for emphasis */
+  font-weight: bold;
+  color: #ff6347; /* Tomato color for emphasis */
+  animation: pulse 1.5s infinite; /* Apply the pulse animation */
+}
+
+/* Pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Rotate keyframes */
+@keyframes rotateSymbol {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styling for the options (radio buttons) */
+.card div {
+  margin-bottom: 15px; /* Space between options */
+  display: flex;
+  align-items: center; /* Align options and labels */
+}
+
+.card input[type="radio"] {
+  appearance: none; /* Remove default styling */
+  border: 2px solid #007BFF; /* Blue border for radio buttons */
+  border-radius: 50%; /* Make it circular */
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  transition: background-color 0.3s, transform 0.3s ease;
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.card input[type="radio"]:checked {
+  background-color: #007BFF; /* Color when selected */
+  border: 2px solid #0056b3;
+  transform: scale(1.2); /* Slightly larger when selected */
+}
+
+.card input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: #007BFF; /* Highlight selected option text */
+}
+
+.card label {
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card input[type="radio"]:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add focus shadow */
+}
+
+/* Styling for the Next button inside the card */
+.card button {
+  background-color: #007BFF; /* Button color */
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 20px; /* Add space between options and button */
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.card button:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+}
+
+.card button:active {
+  background-color: #004085; /* Even darker when button is clicked */
+}
+
